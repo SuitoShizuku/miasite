@@ -1,57 +1,223 @@
 <!DOCTYPE html>
-<html lang="jp">
-
+<html lang="ja">
+<!-- EDIT: Mia Official Site - About & Credits -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <link rel="icon" href="images/mia_icon.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
-    <title>ミア - 本サービス</title>
-    <meta name="description" content="本サービスについて">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="assets/mia_icon.png" type="image/png">
+    <title>ミア - 本サービスと制作クレジット</title>
+    <meta name="description" content="Discord Bot「ミア」のプロジェクト概要、開発理念、制作チームおよびクレジット情報をご紹介します。">
     <meta name="author" content="Shizuku">
-    <meta name="theme-color" content="#956d4e">
+    <meta name="theme-color" content="#0a0e17">
     <meta http-equiv="Expires" content="0">
     <meta property="og:url" content="https://mia.suitomizu.com/about">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="ミアBot - 本サービスについて">
-    <meta property="og:description" content="本サービスについての詳細情報を記載しています。">
+    <meta property="og:title" content="ミアBot - 本サービスと制作クレジット">
+    <meta property="og:description" content="Discord Bot「ミア」のプロジェクト概要、開発理念、制作チームおよびクレジット情報をご紹介します。">
     <meta property="og:site_name" content="Mia">
-    <meta property="og:image" content="https://mia.suitomizu.com/images/mia_icon.png">
+    <meta property="og:image" content="https://mia.suitomizu.com/assets/mia_icon.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta name="twitter:card" content="summary">
+
+    <!-- ADD: Discord Component Embed (PR #8606対応) -->
+    <script id="discord:component-embed" type="application/json">
+    {
+      "component": {
+        "type": 17,
+        "accent_color": 1295639,
+        "components": [
+          {
+            "type": 9,
+            "components": [
+              {
+                "type": 10,
+                "content": "# **[ミアBot - 制作クレジット](https://mia.suitomizu.com/about)**\nコード・設計 / SuitoShizuku\nキャラクターデザイン / 翡花\nアイコンイラスト / えぬさん。"
+              }
+            ],
+            "accessory": {
+              "type": 11,
+              "media": { "url": "https://mia.suitomizu.com/assets/mia_icon.png" }
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- ADD: Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ADD: Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- ADD: Subtle Ambient Background -->
+    <div class="ambient-bg">
+        <div class="ambient-gradient"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- EDIT: Navigation Header -->
     <header class="header">
-        <span class="header-content">
-            <a href="./" id="header-left">Top</a>|
-            <a href="./terms_of_use">Terms of Use</a>|
-            <a href="./privacy_policy">Privacy Policy</a>|
-            <a id="header-right"><b>About</b></a>
-        </span>
+        <div class="header-container">
+            <a href="./" class="nav-brand">
+                <img src="assets/mia_icon.png" alt="ミア" class="nav-brand-icon">
+                <span class="nav-brand-title">Mia</span>
+            </a>
+            <nav class="header-content">
+                <a href="./" class="nav-link">Top</a>
+                <a href="./features" class="nav-link">Features</a>
+                <a href="./terms_of_use" class="nav-link">Terms of Use</a>
+                <a href="./privacy_policy" class="nav-link">Privacy Policy</a>
+                <a href="./about" class="nav-link active">About</a>
+            </nav>
+            <a href="https://mia.suitomizu.com/invite" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                </svg>
+                <span>導入する</span>
+            </a>
+        </div>
     </header>
 
-    <body>
-        <div id="root">
-            <div class="side-view">
-                <div class="about-section mizu-teams">
-                    <span class="about-section-title"><b>MizuTeam</b></span>
-                    <div class="members">
-                        <button onclick="window.open('https\:\/\/links.suitomizu.com')">
-                            <img src="./images/shizuku_icon.png">
-                            <div>
-                            <b>SuitoShizuku</b>
-                            <span>メインコーディング</span>
-                        </div></button>
+    <main>
+        <!-- EDIT: Header Banner -->
+        <section class="about-hero">
+            <div class="section-container">
+                <span class="section-tag">About &amp; Credits</span>
+                <h1 class="section-title">本サービス・制作クレジット</h1>
+                <p class="section-desc">Discord Bot「ミア」の概要および制作チームのクレジットです。</p>
+            </div>
+        </section>
+
+        <!-- EDIT: Visual & Service Summary -->
+        <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+            <div class="section-container">
+                <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2.5rem 2rem; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2.5rem; align-items: center;">
+                    <div style="text-align: center;">
+                        <img src="assets/mia.png" alt="ミア" style="max-width: 280px; width: 100%; height: auto; filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));">
+                    </div>
+                    <div>
+                        <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-bottom: 1rem;">ミア (Mia)</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                            MizuTeamが開発・運営するDiscord Botです。TRPGダイスロール機能やカラーコード変換、リマインダー、IDカード管理など、Discordサーバーでの日常や活動をサポートする様々な機能を備えています。
+                        </p>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                            <a href="./features" class="btn-secondary" style="padding: 0.65rem 1.25rem; font-size: 0.9rem;">機能一覧を見る</a>
+                            <a href="https://mia.suitomizu.com/invite" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 0.65rem 1.25rem; font-size: 0.9rem;">サーバーに導入</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </body>
+        </section>
 
+        <!-- EDIT: Team & Credits Section -->
+        <section class="section" id="credits">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">MizuTeam &amp; Creators</span>
+                    <h2 class="section-title">制作クレジット</h2>
+                    <p class="section-desc">ミアの開発およびデザインを担当したクリエイターです。</p>
+                </div>
+
+                <div class="about-members-grid">
+                    <!-- EDIT: SuitoShizuku (メインコーディング) -->
+                    <div class="member-card">
+                        <div class="member-avatar-wrapper">
+                            <img src="https://unavatar.io/x/SuitoShizuku" 
+                                 alt="SuitoShizuku" 
+                                 class="member-avatar"
+                                 loading="lazy"
+                                 onerror="this.onerror=null; this.src='https://links.suitomizu.com/icon/256.png';">
+                        </div>
+                        <span class="member-role-tag">メインコーディング</span>
+                        <h3 class="member-name">SuitoShizuku</h3>
+                        <p class="member-bio">ミアの設計・実装・Bot本体の開発を担当。</p>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                            <a href="https://x.com/SuitoShizuku" target="_blank" rel="noopener noreferrer" class="member-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                                </svg>
+                                <span>@SuitoShizuku</span>
+                            </a>
+                            <a href="https://links.suitomizu.com" target="_blank" rel="noopener noreferrer" class="member-btn">
+                                <span>Links</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- EDIT: 翡花 (キャラクターデザイン) -->
+                    <div class="member-card">
+                        <div class="member-avatar-wrapper">
+                            <img src="https://unavatar.io/x/Hibana__na" 
+                                 alt="翡花" 
+                                 class="member-avatar"
+                                 loading="lazy"
+                                 onerror="this.onerror=null; this.src='assets/mia_icon.png';">
+                        </div>
+                        <span class="member-role-tag">キャラクターデザイン</span>
+                        <h3 class="member-name">翡花</h3>
+                        <p class="member-bio">「ミア」のキャラクターデザインを担当。</p>
+                        <a href="https://x.com/Hibana__na" target="_blank" rel="noopener noreferrer" class="member-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                            </svg>
+                            <span>@Hibana__na</span>
+                        </a>
+                    </div>
+
+                    <!-- EDIT: えぬさん。 (アイコンのイラストレーション) -->
+                    <div class="member-card">
+                        <div class="member-avatar-wrapper">
+                            <img src="https://unavatar.io/x/enuenusansan" 
+                                 alt="えぬさん。" 
+                                 class="member-avatar"
+                                 loading="lazy"
+                                 onerror="this.onerror=null; this.src='assets/mia_icon.png';">
+                        </div>
+                        <span class="member-role-tag">アイコンのイラストレーション</span>
+                        <h3 class="member-name">えぬさん。</h3>
+                        <p class="member-bio">公式アイコンのイラストレーションを担当。</p>
+                        <a href="https://x.com/enuenusansan" target="_blank" rel="noopener noreferrer" class="member-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                            </svg>
+                            <span>@enuenusansan</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- EDIT: Footer Navigation -->
     <footer class="footer">
-        <div class="footer-text">
-            <small>&copy; SuitoShizuku 2025-2026</small>
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="./" class="footer-brand">
+                    <img src="assets/mia_icon.png" alt="ミア" style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--accent-cyan);">
+                    <span class="footer-brand-title">ミアBot</span>
+                </a>
+                <div class="footer-links">
+                    <a href="./" class="footer-link">Top</a>
+                    <a href="./features" class="footer-link">Features</a>
+                    <a href="./terms_of_use" class="footer-link">Terms of Use</a>
+                    <a href="./privacy_policy" class="footer-link">Privacy Policy</a>
+                    <a href="./about" class="footer-link">About</a>
+                    <a href="https://mia.suitomizu.com/invite" target="_blank" rel="noopener noreferrer" class="footer-link">Invite</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; SuitoShizuku 2025. All rights reserved.</span>
+            </div>
         </div>
     </footer>
-</body>
 
+    <!-- ADD: Interactive Javascript -->
+    <script src="main.js"></script>
+</body>
 </html>

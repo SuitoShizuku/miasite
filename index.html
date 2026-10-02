@@ -1,60 +1,372 @@
 <!DOCTYPE html>
-<html lang="jp">
-<!-- v1.0 -->
+<html lang="ja">
+<!-- EDIT: Mia Official Site - Top Page -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <link rel="icon" href="images/mia_icon.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="assets/mia_icon.png" type="image/png">
     <title>ミア - Discordがちょっと便利になるBot</title>
-    <meta name="description" content="ミアの公式サイト">
+    <meta name="description" content="TRPGダイスロール、カラー変換、リマインダー、IDカードなど、Discordサーバーを便利にする多機能Bot「ミア」の公式サイトです。">
     <meta name="author" content="Shizuku">
-    <meta name="theme-color" content="#956d4e">
+    <meta name="theme-color" content="#0a0e17">
     <meta http-equiv="Expires" content="0">
     <meta property="og:url" content="https://mia.suitomizu.com/">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="ミアBot - Discordがちょっと便利になるBot">
-    <meta property="og:description" content="ミアの公式サイトです。">
+    <meta property="og:description" content="TRPGダイスロール、カラー変換、リマインダー、IDカードなど、Discordサーバーを便利にする多機能Bot「ミア」の公式サイトです。">
     <meta property="og:site_name" content="Mia">
-    <meta property="og:image" content="https://mia.suitomizu.com/images/mia_icon.png">
+    <meta property="og:image" content="https://mia.suitomizu.com/assets/mia_icon.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta name="twitter:card" content="summary">
+
+    <!-- ADD: Discord Component Embed (PR #8606対応) -->
+    <script id="discord:component-embed" type="application/json">
+    {
+      "component": {
+        "type": 17,
+        "accent_color": 1295639,
+        "components": [
+          {
+            "type": 9,
+            "components": [
+              {
+                "type": 10,
+                "content": "# **[ミアBot](https://mia.suitomizu.com/)**\nDiscordをちょっと便利にする多機能Bot\n\nTRPGダイスロール・カラー変換・リマインダー・IDカードなど、日常使いに役立つ機能を搭載しています。"
+              }
+            ],
+            "accessory": {
+              "type": 11,
+              "media": { "url": "https://mia.suitomizu.com/assets/mia_icon.png" }
+            }
+          },
+          {
+            "type": 14,
+            "spacing": 1
+          },
+          {
+            "type": 1,
+            "components": [
+              { "type": 2, "style": 5, "url": "https://mia.suitomizu.com/features", "label": "機能一覧" },
+              { "type": 2, "style": 5, "url": "https://mia.suitomizu.com/invite", "label": "導入する" }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- ADD: Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ADD: Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- ADD: Subtle Ambient Background -->
+    <div class="ambient-bg">
+        <div class="ambient-gradient"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- EDIT: Navigation Header -->
     <header class="header">
-        <span class="header-content">
-            <a id="header-left"><b>Top</b></a>|
-            <a href="./terms_of_use">Terms of Use</a>|
-            <a href="./privacy_policy">Privacy Policy</a>|
-            <a href="./about" id="header-right">About</a>
-        </span>
+        <div class="header-container">
+            <a href="./" class="nav-brand">
+                <img src="assets/mia_icon.png" alt="ミア" class="nav-brand-icon">
+                <span class="nav-brand-title">Mia</span>
+            </a>
+            <nav class="header-content">
+                <a href="./" class="nav-link active">Top</a>
+                <a href="./features" class="nav-link">Features</a>
+                <a href="./terms_of_use" class="nav-link">Terms of Use</a>
+                <a href="./privacy_policy" class="nav-link">Privacy Policy</a>
+                <a href="./about" class="nav-link">About</a>
+            </nav>
+            <a href="https://mia.suitomizu.com/invite" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                </svg>
+                <span>導入する</span>
+            </a>
+        </div>
     </header>
 
-    <div id="top">
-        <div class="top_mia"><img src="./images/mia_icon.png" id="top_icon" class="mia_icon">
-            <div class="top_text">
-                <b class="top_name">ミアBot</b>
-                <p class="top_subtext">Discordがちょっと便利に</p>
+    <main>
+        <!-- EDIT: Hero Section -->
+        <section class="hero-section" id="top">
+            <div class="hero-container">
+                <div class="hero-text-content">
+                    <div class="hero-badge">
+                        <span class="badge-pulse"></span>
+                        <span>Discord Assistant Bot</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Discordが、<br>
+                        <span class="gradient-text">ちょっと便利</span>に。
+                    </h1>
+                    <p class="hero-subtitle">
+                        ミア(Mia)は、TRPGダイスロールやカラーコード変換、リマインダー、IDカード管理など、Discordサーバーの日常を快適にサポートするBotです。
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://mia.suitomizu.com/invite" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                            </svg>
+                            <span>サーバーに導入する</span>
+                        </a>
+                        <a href="./features" class="btn-secondary">
+                            <span>機能一覧を見る</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-visual-card">
+                        <img src="assets/mia.png" alt="ミア キャラクターイラスト" class="hero-character-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDIT: Key Features Section (Real Features from Bot Code) -->
+        <section class="section" id="features">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Core Features</span>
+                    <h2 class="section-title">主な搭載機能</h2>
+                    <p class="section-desc">TRPGセッションから日常の雑談・サーバー運営まで、実用的な機能が充実しています。</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3z"/>
+                                <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">BCDice連携 TRPGダイス</h3>
+                        <p class="feature-desc">クトゥルフ神話TRPG(6版/7版)やエモクロア、シノビガミ等の主要システムに対応。チャットでの直接ダイスやシークレットロール、キャラメイク一括振り、出目統計集計が可能です。</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-1 0A7 7 0 1 0 1 8a7 7 0 0 0 14 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">カラーコード変換 ・ 可視化</h3>
+                        <p class="feature-desc">HEX・RGB・カラーコードの相互変換に対応。さらにチャット内に「#xxxxxx」の形式でカラーコードが投稿されると、自動で該当する色をプレビュー表示します。</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">リマインダー ・ 通知</h3>
+                        <p class="feature-desc">「10m」「1h」「日時指定」で指定チャンネルへリマインドを予約投稿。タイトルやメモを添付でき、登録済みリマインドの削除・管理も行えます。</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+                                <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">IDカード管理</h3>
+                        <p class="feature-desc">SNSや各種ゲームのフレンドIDをカード形式で登録・共有。サーバーメンバーのプロフィール確認をスムーズにします。</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+                                <path d="M3.5 6h1a.5.5 0 0 1 .5.5v1H6a.5.5 0 0 1 0 1H5v1a.5.5 0 0 1-1 0V8H3a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 .5-.5"/>
+                                <path d="M4.5 1a3.5 3.5 0 0 0-3.5 3.5v7A3.5 3.5 0 0 0 4.5 15h7a3.5 3.5 0 0 0 3.5-3.5v-7A3.5 3.5 0 0 0 11.5 1zM2 4.5A2.5 2.5 0 0 1 4.5 2h7A2.5 2.5 0 0 1 14 4.5v7a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 11.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">ミニゲーム (テンパズル・おみくじ)</h3>
+                        <p class="feature-desc">4つの数字から四則演算で10を作る「テンパズル」のランダム出題・解答機能や、日替わりのおみくじ機能などを搭載しています。</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">自動返信 ・ ログ保存</h3>
+                        <p class="feature-desc">キーワードに対する自動返信設定や、指定チャンネルのチャットログ一括保存、メッセージ情報確認など、コミュニティ運営に役立つツールも網羅。</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <a href="./features" class="btn-secondary">全11コマンドと機能の完全リファレンスを見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDIT: Interactive Discord Preview Showcase (Using Real Bot Commands) -->
+        <section class="section" style="padding-top: 2rem;">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Interactive Preview</span>
+                    <h2 class="section-title">実際のコマンド応答サンプル</h2>
+                    <p class="section-desc">タブを切り替えて、各コマンドを実行した際の実際の応答イメージを確認できます。</p>
+                    <div style="margin-top: 1.25rem; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <button class="nav-link active command-tab-btn" data-cmd="dice" style="cursor: pointer;">/dice (TRPG)</button>
+                        <button class="nav-link command-tab-btn" data-cmd="color" style="cursor: pointer;">/color (カラー)</button>
+                        <button class="nav-link command-tab-btn" data-cmd="play" style="cursor: pointer;">/play (テンパズル)</button>
+                        <button class="nav-link command-tab-btn" data-cmd="remind" style="cursor: pointer;">/remind (リマインド)</button>
+                    </div>
+                </div>
+
+                <div class="preview-showcase">
+                    <div class="discord-window-header">
+                        <div class="window-dots">
+                            <span class="window-dot dot-red"></span>
+                            <span class="window-dot dot-yellow"></span>
+                            <span class="window-dot dot-green"></span>
+                        </div>
+                        <div class="channel-tag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.39 12.648a1 1 0 0 0-.78 0L1.635 15.15a.5.5 0 0 1-.663-.61l1.52-5.776a1 1 0 0 0-.256-.963L.19 5.348a.5.5 0 0 1 .28-.854l5.96-.866a1 1 0 0 0 .753-.547l2.666-5.4a.5.5 0 0 1 .896 0l2.666 5.4a1 1 0 0 0 .753.547l5.96.866a.5.5 0 0 1 .28.854l-4.312 4.202a1 1 0 0 0-.256.963l1.52 5.776a.5.5 0 0 1-.663.61l-5.975-2.502z"/>
+                            </svg>
+                            <span># general</span>
+                        </div>
+                        <div style="width: 44px;"></div>
+                    </div>
+
+                    <div class="discord-body">
+                        <!-- User message -->
+                        <div class="discord-message">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #5865f2; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; flex-shrink: 0;">
+                                U
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <span class="message-author">User</span>
+                                    <span class="message-timestamp">今日 12:00</span>
+                                </div>
+                                <div class="message-text interactive-input-preview" style="color: #38bdf8; font-family: var(--font-mono); font-size: 0.875rem;">
+                                    /dice use roll roll:1d100 dicebot:Cthulhu7th
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mia Bot response -->
+                        <div class="discord-message">
+                            <img src="assets/mia_icon.png" alt="ミア" class="discord-avatar">
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <span class="message-author" style="color: #38bdf8;">ミアBot</span>
+                                    <span class="bot-tag">BOT</span>
+                                    <span class="message-timestamp">今日 12:00</span>
+                                </div>
+                                <div class="discord-embed">
+                                    <div class="embed-title interactive-embed-title">ダイスロール (BCDice連携)</div>
+                                    <div class="embed-description interactive-embed-desc">
+                                        クトゥルフ神話TRPG第7版のダイスロールを実行しました。
+                                    </div>
+                                    <div class="embed-field">
+                                        <span class="embed-field-label">実行結果</span>
+                                        <span class="embed-field-value interactive-val-1">Cthulhu7th : (1D100&lt;=50) -&gt; 28 -&gt; レギュラー成功</span>
+                                    </div>
+                                    <div class="embed-field">
+                                        <span class="embed-field-label">補足</span>
+                                        <span class="embed-field-value interactive-val-2">シークレットロール対応 / 出目統計集計機能あり</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDIT: How to Setup -->
+        <section class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">How to Setup</span>
+                    <h2 class="section-title">簡単3ステップで導入</h2>
+                    <p class="section-desc">追加の手順は必要ありません。認証後すぐに各コマンドを利用可能です。</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <span class="step-number">01</span>
+                        <h3 class="step-title">招待リンクを開く</h3>
+                        <p class="step-desc">サイト内の「サーバーに導入する」ボタンからDiscordの認証画面を開きます。</p>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">02</span>
+                        <h3 class="step-title">導入サーバーを選択</h3>
+                        <p class="step-desc">追加したいサーバーを選択し、必要な権限を確認して承認します。</p>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">03</span>
+                        <h3 class="step-title">コマンドを実行</h3>
+                        <p class="step-desc">チャット欄で「/」を入力し、各スラッシュコマンドを呼び出します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDIT: Call to Action Banner -->
+        <section class="section" style="padding-top: 1rem;">
+            <div class="section-container">
+                <div class="cta-banner">
+                    <h2 class="cta-title">ミアをサーバーに導入する</h2>
+                    <p class="cta-desc">いつでも無料で導入可能。DiscordサーバーでのTRPGや日常のやり取りをサポートします。</p>
+                    <a href="https://mia.suitomizu.com/invite" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                        </svg>
+                        <span>今すぐサーバーに導入</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- EDIT: Footer Navigation -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="./" class="footer-brand">
+                    <img src="assets/mia_icon.png" alt="ミア" style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--accent-cyan);">
+                    <span class="footer-brand-title">ミアBot</span>
+                </a>
+                <div class="footer-links">
+                    <a href="./" class="footer-link">Top</a>
+                    <a href="./features" class="footer-link">Features</a>
+                    <a href="./terms_of_use" class="footer-link">Terms of Use</a>
+                    <a href="./privacy_policy" class="footer-link">Privacy Policy</a>
+                    <a href="./about" class="footer-link">About</a>
+                    <a href="https://mia.suitomizu.com/invite" target="_blank" rel="noopener noreferrer" class="footer-link">Invite</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; SuitoShizuku 2025. All rights reserved.</span>
             </div>
         </div>
-    </div>
-    <div id="middle">
-        <div class="invite"><button onclick="window.open('https\:\/\/mia.suitomizu.com/invite')"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="currentColor" class="discord-icon"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
-                </svg>
-                <div class="invite_div">
-                    <b class="invite_title">サーバーに招待</b>
-                </div>
-            </button>
-        </div>
-    </div>
-    <footer class="footer">
-        <div class="footer-text">
-            <small>&copy; SuitoShizuku 2025-2026</small>
-        </div>
     </footer>
-</body>
 
+    <!-- ADD: Interactive Javascript -->
+    <script src="main.js"></script>
+</body>
 </html>

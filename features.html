@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- ADD: Mia Official Site - Features & Slash Commands Page -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="assets/mia_icon.png" type="image/png">
+    <title>ミア - 機能一覧・スラッシュコマンド</title>
+    <meta name="description" content="Discord Bot「ミア」の機能一覧および全スラッシュコマンドのリファレンスです。TRPGダイスロール、カラー変換、リマインダー、IDカード等の詳細仕様を掲載しています。">
+    <meta name="author" content="Shizuku">
+    <meta name="theme-color" content="#0a0e17">
+    <meta http-equiv="Expires" content="0">
+    <meta property="og:url" content="https://mia.suitomizu.com/features">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ミアBot - 機能一覧・スラッシュコマンド">
+    <meta property="og:description" content="Discord Bot「ミア」の機能一覧および全スラッシュコマンドのリファレンスです。">
+    <meta property="og:site_name" content="Mia">
+    <meta property="og:image" content="https://mia.suitomizu.com/assets/mia_icon.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta name="twitter:card" content="summary">
+
+    <!-- ADD: Discord Component Embed (PR #8606対応) -->
+    <script id="discord:component-embed" type="application/json">
+    {
+      "component": {
+        "type": 17,
+        "accent_color": 1295639,
+        "components": [
+          {
+            "type": 9,
+            "components": [
+              {
+                "type": 10,
+                "content": "# **[ミアBot - 機能一覧](https://mia.suitomizu.com/features)**\nBCDiceダイスロール・カラー変換・リマインダー・IDカード・ミニゲームなど、全スラッシュコマンドのリファレンスはこちら。"
+              }
+            ],
+            "accessory": {
+              "type": 11,
+              "media": { "url": "https://mia.suitomizu.com/assets/mia_icon.png" }
+            }
+          },
+          {
+            "type": 14,
+            "spacing": 1
+          },
+          {
+            "type": 1,
+            "components": [
+              { "type": 2, "style": 5, "url": "https://mia.suitomizu.com/invite", "label": "導入する" }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- ADD: Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ADD: Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ADD: Subtle Ambient Background -->
+    <div class="ambient-bg">
+        <div class="ambient-gradient"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- ADD: Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <a href="./" class="nav-brand">
+                <img src="assets/mia_icon.png" alt="ミア" class="nav-brand-icon">
+                <span class="nav-brand-title">Mia</span>
+            </a>
+            <nav class="header-content">
+                <a href="./" class="nav-link">Top</a>
+                <a href="./features" class="nav-link active">Features</a>
+                <a href="./terms_of_use" class="nav-link">Terms of Use</a>
+                <a href="./privacy_policy" class="nav-link">Privacy Policy</a>
+                <a href="./about" class="nav-link">About</a>
+            </nav>
+            <a href="https://mia.suitomizu.com/invite" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                </svg>
+                <span>導入する</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ADD: Page Title Header -->
+        <section class="about-hero">
+            <div class="section-container">
+                <span class="section-tag">Features &amp; Commands</span>
+                <h1 class="section-title">機能一覧・スラッシュコマンド</h1>
+                <p class="section-desc">ミア本体に実装されている全機能とスラッシュコマンドの詳細仕様一覧です。</p>
+            </div>
+        </section>
+
+        <!-- ADD: Features Content -->
+        <section class="section" style="padding-top: 0;">
+            <div class="section-container">
+
+                <!-- ADD: TRPG & Dice Category -->
+                <div class="command-category">
+                    <h2 class="category-title">
+                        <span>TRPG ・ ダイス機能</span>
+                        <span class="category-badge">BCDice連携</span>
+                    </h2>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/dice</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">ダイス総合コマンド</span>
+                        </div>
+                        <p class="command-summary">BCDiceと連携したダイスロール、出目統計の確認、サーバーごとの動作設定を行えます。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/dice use roll <span class="param-tag">roll:式</span> <span class="param-tag">[dicebot:システム]</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">指定したダイスボットでシークレットロール(非公開ロール)または通常ロールを実行します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/dice use statistics <span class="param-tag">[type:形式]</span> <span class="param-tag">[user:対象]</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">これまでのD100の出目統計データをグラフ・数値で表示します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/dice settings system <span class="param-tag">dicebot:システム</span> <span class="param-tag">[help-response:設定]</span></div>
+                                <div class="subcommand-desc">チャットで直接振る際のデフォルトダイスボットやヘルプ応答を設定します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/dice settings blacklist <span class="param-tag">channel:チャンネル</span> <span class="param-tag">type:追加/削除</span></div>
+                                <div class="subcommand-desc">チャットでのダイス自動反応を無効化するチャンネルを指定・解除します。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/trpg</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">TRPG専用サポート</span>
+                        </div>
+                        <p class="command-summary">キャラクターシート作成時のダイス一括振りやココフォリアログの解析を行います。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/trpg chara-make <span class="param-tag">type:システム</span> <span class="param-tag">[detail:詳細演算]</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">クトゥルフ神話TRPGなどの能力値ダイスを一括で振り、SAN値やダメージボーナスまで自動計算します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/trpg dicelog-statistics <span class="param-tag">type:システム</span> <span class="param-tag">html:ログファイル</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">ココフォリアの全チャットログHTMLファイルをアップロードすることで、セッション内のダイス出目統計を出力します。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card" style="background: rgba(15, 23, 42, 0.45);">
+                        <div class="command-header">
+                            <span class="command-name" style="color: #94a3b8;">チャットダイス直接入力</span>
+                            <span class="category-badge" style="background: rgba(255, 255, 255, 0.05); color: #cbd5e1; border-color: rgba(255, 255, 255, 0.1);">常時機能</span>
+                        </div>
+                        <p class="command-summary">コマンドを使わなくても、チャット欄にプレフィックス付きで入力するだけでダイスが振れます。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">例: coc 1d100&lt;=50 / coc7 cc&lt;=60 / emo 2d6 / shinobi 2d6</div>
+                                <div class="subcommand-desc">対応プレフィックス: coc (クトゥルフ6版), coc7 (クトゥルフ7版), emo (エモクロア), shinobi (シノビガミ), futari (フタリソウサ), para (パラノイア), stell (ステラナイツ), bc (一般BCDice)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ADD: Color Utilities -->
+                <div class="command-category">
+                    <h2 class="category-title">
+                        <span>カラーユーティリティ</span>
+                        <span class="category-badge">色彩ツール</span>
+                    </h2>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/color</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">カラー情報・変換</span>
+                        </div>
+                        <p class="command-summary">カラーコードの相互変換やランダムカラーの抽出を行います。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/color convert from_code <span class="param-tag">colorcode:コード</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">「#38bdf8」などのカラーコードからRGB・HEX値・カラープレビューを出力します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/color convert from_hex <span class="param-tag">hex:10進数HEX</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">10進数のHEXカラー数値からカラーコード情報を変換出力します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/color convert from_rgb <span class="param-tag">red:赤(0-255)</span> <span class="param-tag">green:緑(0-255)</span> <span class="param-tag">blue:青(0-255)</span></div>
+                                <div class="subcommand-desc">RGBの各要素からカラーコードを生成します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/color convert random <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">ランダムに色を1色抽出し、各形式の値と色プレビューを表示します。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card" style="background: rgba(15, 23, 42, 0.45);">
+                        <div class="command-header">
+                            <span class="command-name" style="color: #94a3b8;">チャット内カラー自動可視化</span>
+                            <span class="category-badge" style="background: rgba(255, 255, 255, 0.05); color: #cbd5e1; border-color: rgba(255, 255, 255, 0.1);">常時機能</span>
+                        </div>
+                        <p class="command-summary">通常のチャット発言の中に「#ffffff」などの6桁カラーコードが含まれると、自動で該当する色の画像・情報をプレビュー表示します。</p>
+                    </div>
+                </div>
+
+                <!-- ADD: Life & Utility -->
+                <div class="command-category">
+                    <h2 class="category-title">
+                        <span>生活 ・ サーバーユーティリティ</span>
+                        <span class="category-badge">リマインダー・ID管理</span>
+                    </h2>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/remind</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">リマインダー</span>
+                        </div>
+                        <p class="command-summary">指定した時間に指定チャンネルへメンション付きのリマインドメッセージを投稿します。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/remind create <span class="param-tag">time:時間</span> <span class="param-tag">title:タイトル</span> <span class="param-tag">[at:投稿先]</span> <span class="param-tag">[note:メモ]</span></div>
+                                <div class="subcommand-desc">リマインドを作成します。「10m」「1h」「2026/10/10 15:00」等の形式で柔軟に時間を指定可能です。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/remind delete <span class="param-tag">id:リマインド</span></div>
+                                <div class="subcommand-desc">登録したリマインドを一覧から選択して削除します。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/idcard</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">IDカード管理</span>
+                        </div>
+                        <p class="command-summary">メンバー同士でSNSやゲームのフレンドIDを共有・確認できるIDカード機能です。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/idcard view <span class="param-tag">[user:対象ユーザー]</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">指定したユーザー(または自分)のIDカードを閲覧します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/idcard set <span class="param-tag">title:サービス名</span> <span class="param-tag">value:ID</span></div>
+                                <div class="subcommand-desc">自分のIDカードにSNSやゲームIDを設定します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/idcard edit <span class="param-tag">title:項目名</span> <span class="param-tag">value:ID</span></div>
+                                <div class="subcommand-desc">選択肢にないカスタム項目を新規作成・編集します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/idcard remove <span class="param-tag">title:項目名</span></div>
+                                <div class="subcommand-desc">IDカードから特定の項目を削除します。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/reply</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">自動キーワード返信</span>
+                        </div>
+                        <p class="command-summary">特定のワードにミアが自動でリアクション・返信するための設定です。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/reply add <span class="param-tag">word:キーワード</span> <span class="param-tag">reply:返信内容</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">自動返信の対象ワードと返信内容を登録します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/reply remove <span class="param-tag">work:キーワード</span></div>
+                                <div class="subcommand-desc">登録済みのキーワード返信設定を削除します。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/message</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">メッセージ管理</span>
+                        </div>
+                        <p class="command-summary">メッセージのメタデータ確認やチャンネルログの保存を行います。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/message info <span class="param-tag">msg:メッセージID</span> <span class="param-tag">[channel:チャンネルID]</span></div>
+                                <div class="subcommand-desc">メッセージの詳細情報(送信時刻、ID、リンク等)を開示します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/message save <span class="param-tag">[format:形式]</span></div>
+                                <div class="subcommand-desc">コマンドを実行したチャンネルのチャットログを書き出し保存します。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/vc</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">ボイスチャット</span>
+                        </div>
+                        <p class="command-summary">ボイスチャンネルへの参加・退出を操作します。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/vc join <span class="param-tag">channel:チャンネル</span></div>
+                                <div class="subcommand-desc">指定したボイスチャンネルにミアを参加させます。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/vc leave</div>
+                                <div class="subcommand-desc">参加中のボイスチャンネルからミアを退出させます。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ADD: Mini Games & Fun -->
+                <div class="command-category">
+                    <h2 class="category-title">
+                        <span>ミニゲーム ・ 遊び</span>
+                        <span class="category-badge">パズル・おみくじ</span>
+                    </h2>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/play</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">ミニゲーム</span>
+                        </div>
+                        <p class="command-summary">テンパズル(Make 10)やおみくじなどのミニゲームで遊べます。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/play ten-puzzle generate <span class="param-tag">[answer-gen:答え同時生成]</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">4つの数字を四則演算(+ - × ÷)のみで10にする式を考えるパズルをランダム生成します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/play ten-puzzle answer <span class="param-tag">q:問題の数字</span> <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">テンパズルの解答を出力します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/play omikuji <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">日替わりのおみくじをロールします。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card" style="background: rgba(15, 23, 42, 0.45);">
+                        <div class="command-header">
+                            <span class="command-name" style="color: #94a3b8;">猫化機能 (nekoka)</span>
+                            <span class="category-badge" style="background: rgba(255, 255, 255, 0.05); color: #cbd5e1; border-color: rgba(255, 255, 255, 0.1);">常時機能</span>
+                        </div>
+                        <p class="command-summary">チャットメッセージの語尾を猫語に変換する遊び心満載のギミックです。</p>
+                    </div>
+                </div>
+
+                <!-- ADD: Privacy & System -->
+                <div class="command-category">
+                    <h2 class="category-title">
+                        <span>プライバシー ・ その他</span>
+                        <span class="category-badge">統計・招待</span>
+                    </h2>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/statistics</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">個人統計データ</span>
+                        </div>
+                        <p class="command-summary">送信文字数やメッセージ数など、ミアが収集した統計データの確認・完全削除が可能です。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/statistics get <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">自分の統計情報(メッセージ送信数、文字数等)を取得します。</div>
+                            </div>
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/statistics clear</div>
+                                <div class="subcommand-desc">ミアが保持しているあなたのデータを完全にリセット・消去します。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="command-header">
+                            <span class="command-name">/invite</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Bot招待リンク</span>
+                        </div>
+                        <p class="command-summary">ミアを別のサーバーに招待するための認証URLを発行します。</p>
+                        <div class="subcommand-list">
+                            <div class="subcommand-item">
+                                <div class="subcommand-syntax">/invite <span class="param-tag">[hide:真偽値]</span></div>
+                                <div class="subcommand-desc">ミアの公式招待リンクを発行してチャットに表示します。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ADD: Footer Navigation -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="./" class="footer-brand">
+                    <img src="assets/mia_icon.png" alt="ミア" style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--accent-cyan);">
+                    <span class="footer-brand-title">ミアBot</span>
+                </a>
+                <div class="footer-links">
+                    <a href="./" class="footer-link">Top</a>
+                    <a href="./features" class="footer-link">Features</a>
+                    <a href="./terms_of_use" class="footer-link">Terms of Use</a>
+                    <a href="./privacy_policy" class="footer-link">Privacy Policy</a>
+                    <a href="./about" class="footer-link">About</a>
+                    <a href="https://mia.suitomizu.com/invite" target="_blank" rel="noopener noreferrer" class="footer-link">Invite</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; SuitoShizuku 2025. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ADD: Interactive Javascript -->
+    <script src="main.js"></script>
+</body>
+</html>
